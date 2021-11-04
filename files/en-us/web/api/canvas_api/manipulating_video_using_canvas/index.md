@@ -126,11 +126,11 @@ The `computeFrame()` method, shown below, is responsible for actually fetching 
     const length = frame.data.length;
 
     for (let i = 0; i < length; i += 4) {
-      const red = data[i + 0];
-      const green = data[i + 1];
-      const blue = data[i + 2];
+      const red = frame.data[i + 0];
+      const green = frame.data[i + 1];
+      const blue = frame.data[i + 2];
       if (green > 100 && red > 100 && blue < 43) {
-        data[i + 3] = 0;
+        frame.data[i + 3] = 0;
       }
     }
     this.ctx2.putImageData(frame, 0, 0);
